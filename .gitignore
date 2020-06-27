@@ -3,3 +3,6 @@
 /packages
 /.vs
 /build/x64/libcef.dll
+/build/x64/debug.log
+/build/x64/skype.exe.config
+/build/x64/skype.pdb
