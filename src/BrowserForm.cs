@@ -9,6 +9,7 @@ namespace CefSharp.MinimalExample.WinForms
     {
         private readonly ChromiumWebBrowser m_browserSkype;
         private readonly ChromiumWebBrowser m_browserTranslate;
+        private readonly ChromiumWebBrowser m_browserFBMessager;
 
         public BrowserForm()
         {
@@ -19,6 +20,9 @@ namespace CefSharp.MinimalExample.WinForms
 
             m_browserSkype = new ChromiumWebBrowser("https://web.skype.com/");
             toolStripContainer.ContentPanel.Controls.Add(m_browserSkype);
+
+            m_browserFBMessager = new ChromiumWebBrowser("https://www.facebook.com/messages");
+            toolStripContainer.ContentPanel.Controls.Add(m_browserFBMessager);
 
             m_browserTranslate = new ChromiumWebBrowser("https://translate.google.com.vn/?hl=en&tab=rT&authuser=0#view=home&op=translate&sl=en&tl=vi&text=fortunately");
             toolStripContainer.ContentPanel.Controls.Add(m_browserTranslate);
@@ -187,5 +191,9 @@ namespace CefSharp.MinimalExample.WinForms
             Close();
         }
 
+        private void btnFBMessager_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

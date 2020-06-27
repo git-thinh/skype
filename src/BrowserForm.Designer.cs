@@ -45,6 +45,9 @@
             this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnFBMessager = new System.Windows.Forms.ToolStripButton();
+            this.btnGoDictionary = new System.Windows.Forms.ToolStripButton();
+            this.btnWriter = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer.ContentPanel.SuspendLayout();
             this.toolStripContainer.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer.SuspendLayout();
@@ -100,7 +103,10 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnGoSkype,
+            this.btnFBMessager,
             this.btnGoogleTranslate,
+            this.btnGoDictionary,
+            this.btnWriter,
             this.backButton,
             this.forwardButton,
             this.goButton,
@@ -171,7 +177,7 @@
             this.urlTextBox.AutoSize = false;
             this.urlTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.urlTextBox.Name = "urlTextBox";
-            this.urlTextBox.Size = new System.Drawing.Size(300, 25);
+            this.urlTextBox.Size = new System.Drawing.Size(100, 25);
             this.urlTextBox.Visible = false;
             this.urlTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UrlTextBoxKeyUp);
             // 
@@ -234,6 +240,31 @@
             this.splitContainer1.SplitterDistance = 803;
             this.splitContainer1.TabIndex = 2;
             // 
+            // btnFBMessager
+            // 
+            this.btnFBMessager.Image = ((System.Drawing.Image)(resources.GetObject("btnFBMessager.Image")));
+            this.btnFBMessager.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFBMessager.Name = "btnFBMessager";
+            this.btnFBMessager.Size = new System.Drawing.Size(77, 22);
+            this.btnFBMessager.Text = "Messager";
+            this.btnFBMessager.Click += new System.EventHandler(this.btnFBMessager_Click);
+            // 
+            // btnGoDictionary
+            // 
+            this.btnGoDictionary.Image = ((System.Drawing.Image)(resources.GetObject("btnGoDictionary.Image")));
+            this.btnGoDictionary.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGoDictionary.Name = "btnGoDictionary";
+            this.btnGoDictionary.Size = new System.Drawing.Size(81, 22);
+            this.btnGoDictionary.Text = "Dictionary";
+            // 
+            // btnWriter
+            // 
+            this.btnWriter.Image = ((System.Drawing.Image)(resources.GetObject("btnWriter.Image")));
+            this.btnWriter.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnWriter.Name = "btnWriter";
+            this.btnWriter.Size = new System.Drawing.Size(59, 22);
+            this.btnWriter.Text = "Writer";
+            // 
             // BrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,5 +308,8 @@
         private System.Windows.Forms.ToolStripMenuItem btnExit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ToolStripButton btnFBMessager;
+        private System.Windows.Forms.ToolStripButton btnGoDictionary;
+        private System.Windows.Forms.ToolStripButton btnWriter;
     }
 }
