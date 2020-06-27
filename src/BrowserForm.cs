@@ -1,8 +1,4 @@
-﻿// Copyright © 2010-2015 The CefSharp Authors. All rights reserved.
-//
-// Use of this source code is governed by a BSD-style license that can be found in the LICENSE file.
-
-using CefSharp.MinimalExample.WinForms.Controls;
+﻿
 using CefSharp.WinForms;
 using System;
 using System.Windows.Forms;
@@ -11,7 +7,8 @@ namespace CefSharp.MinimalExample.WinForms
 {
     public partial class BrowserForm : Form
     {
-        private readonly ChromiumWebBrowser browser;
+        private readonly ChromiumWebBrowser m_browserSkype;
+        private readonly ChromiumWebBrowser m_browserTranslate;
 
         public BrowserForm()
         {
@@ -20,29 +17,24 @@ namespace CefSharp.MinimalExample.WinForms
             Text = "CefSharp";
             WindowState = FormWindowState.Maximized;
 
-            browser = new ChromiumWebBrowser("https://web.skype.com/");
-            toolStripContainer.ContentPanel.Controls.Add(browser);
+            m_browserSkype = new ChromiumWebBrowser("https://web.skype.com/");
+            toolStripContainer.ContentPanel.Controls.Add(m_browserSkype);
 
-            browser.IsBrowserInitializedChanged += OnIsBrowserInitializedChanged;
-            browser.LoadingStateChanged += OnLoadingStateChanged;
-            browser.ConsoleMessage += OnBrowserConsoleMessage;
-            browser.StatusMessage += OnBrowserStatusMessage;
-            browser.TitleChanged += OnBrowserTitleChanged;
-            browser.AddressChanged += OnBrowserAddressChanged;
+            m_browserTranslate = new ChromiumWebBrowser("https://translate.google.com.vn/?hl=en&tab=rT&authuser=0#view=home&op=translate&sl=en&tl=vi&text=fortunately");
+            toolStripContainer.ContentPanel.Controls.Add(m_browserTranslate);
+
+            m_browserSkype.IsBrowserInitializedChanged += OnIsBrowserInitializedChanged;
+            m_browserSkype.LoadingStateChanged += OnLoadingStateChanged;
+            m_browserSkype.ConsoleMessage += OnBrowserConsoleMessage;
+            m_browserSkype.StatusMessage += OnBrowserStatusMessage;
+            m_browserSkype.TitleChanged += OnBrowserTitleChanged;
+            m_browserSkype.AddressChanged += OnBrowserAddressChanged;
 
             var version = string.Format("Chromium: {0}, CEF: {1}, CefSharp: {2}",
                Cef.ChromiumVersion, Cef.CefVersion, Cef.CefSharpVersion);
 
-#if NETCOREAPP
-            // .NET Core
-            var environment = string.Format("Environment: {0}, Runtime: {1}",
-                System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture.ToString().ToLowerInvariant(),
-                System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription);
-#else
-            // .NET Framework
             var bitness = Environment.Is64BitProcess ? "x64" : "x86";
             var environment = String.Format("Environment: {0}", bitness);
-#endif
 
             DisplayOutput(string.Format("{0}, {1}", version, environment));
         }
@@ -94,13 +86,8 @@ namespace CefSharp.MinimalExample.WinForms
 
         private void SetIsLoading(bool isLoading)
         {
-            goButton.Text = isLoading ?
-                "Stop" :
-                "Go";
-            goButton.Image = isLoading ?
-                Properties.Resources.nav_plain_red :
-                Properties.Resources.nav_plain_green;
-
+            goButton.Text = isLoading ? "Stop" : "Go";
+            goButton.Image = isLoading ? Properties.Resources.nav_plain_red : Properties.Resources.nav_plain_green;
             HandleToolStripLayout();
         }
 
@@ -129,7 +116,7 @@ namespace CefSharp.MinimalExample.WinForms
 
         private void ExitMenuItemClick(object sender, EventArgs e)
         {
-            browser.Dispose();
+            m_browserSkype.Dispose();
             Cef.Shutdown();
             Close();
         }
@@ -141,12 +128,12 @@ namespace CefSharp.MinimalExample.WinForms
 
         private void BackButtonClick(object sender, EventArgs e)
         {
-            browser.Back();
+            m_browserSkype.Back();
         }
 
         private void ForwardButtonClick(object sender, EventArgs e)
         {
-            browser.Forward();
+            m_browserSkype.Forward();
         }
 
         private void UrlTextBoxKeyUp(object sender, KeyEventArgs e)
@@ -163,13 +150,42 @@ namespace CefSharp.MinimalExample.WinForms
         {
             if (Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
             {
-                browser.Load(url);
+                m_browserSkype.Load(url);
             }
         }
 
         private void ShowDevToolsMenuItemClick(object sender, EventArgs e)
         {
-            browser.ShowDevTools();
+            m_browserSkype.ShowDevTools();
         }
+
+        private void btnGoogleTranslate_Click(object sender, EventArgs e)
+        {
+            m_browserSkype.Visible = false;
+            btnGoSkype.Checked = m_browserSkype.Visible;
+            m_browserTranslate.Visible = true;
+            btnGoogleTranslate.Checked = m_browserTranslate.Visible;
+        }
+
+        private void btnGoSkype_Click(object sender, EventArgs e)
+        {
+            m_browserSkype.Visible = true;
+            btnGoSkype.Checked = m_browserSkype.Visible;
+            m_browserTranslate.Visible = false;
+            btnGoogleTranslate.Checked = m_browserTranslate.Visible;
+        }
+
+        private void btnShowDevTools_Click(object sender, EventArgs e)
+        {
+            m_browserSkype.ShowDevTools();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            m_browserSkype.Dispose();
+            Cef.Shutdown();
+            Close();
+        }
+
     }
 }
