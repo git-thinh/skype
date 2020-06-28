@@ -34,7 +34,10 @@
             this.outputLabel = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnGoSkype = new System.Windows.Forms.ToolStripButton();
+            this.btnFBMessager = new System.Windows.Forms.ToolStripButton();
             this.btnGoogleTranslate = new System.Windows.Forms.ToolStripButton();
+            this.btnGoDictionary = new System.Windows.Forms.ToolStripButton();
+            this.btnWriter = new System.Windows.Forms.ToolStripButton();
             this.backButton = new System.Windows.Forms.ToolStripButton();
             this.forwardButton = new System.Windows.Forms.ToolStripButton();
             this.goButton = new System.Windows.Forms.ToolStripButton();
@@ -45,9 +48,9 @@
             this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnFBMessager = new System.Windows.Forms.ToolStripButton();
-            this.btnGoDictionary = new System.Windows.Forms.ToolStripButton();
-            this.btnWriter = new System.Windows.Forms.ToolStripButton();
+            this.btnGoogle = new System.Windows.Forms.ToolStripButton();
+            this.btnStackOverFlow = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer.ContentPanel.SuspendLayout();
             this.toolStripContainer.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer.SuspendLayout();
@@ -65,13 +68,13 @@
             // 
             this.toolStripContainer.ContentPanel.Controls.Add(this.statusLabel);
             this.toolStripContainer.ContentPanel.Controls.Add(this.outputLabel);
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(803, 465);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(1086, 707);
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.LeftToolStripPanelVisible = false;
             this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer.Name = "toolStripContainer";
             this.toolStripContainer.RightToolStripPanelVisible = false;
-            this.toolStripContainer.Size = new System.Drawing.Size(803, 490);
+            this.toolStripContainer.Size = new System.Drawing.Size(1086, 732);
             this.toolStripContainer.TabIndex = 0;
             this.toolStripContainer.Text = "toolStripContainer1";
             // 
@@ -83,7 +86,7 @@
             // 
             this.statusLabel.AutoSize = true;
             this.statusLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.statusLabel.Location = new System.Drawing.Point(0, 439);
+            this.statusLabel.Location = new System.Drawing.Point(0, 681);
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(0, 13);
             this.statusLabel.TabIndex = 1;
@@ -92,7 +95,7 @@
             // 
             this.outputLabel.AutoSize = true;
             this.outputLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.outputLabel.Location = new System.Drawing.Point(0, 452);
+            this.outputLabel.Location = new System.Drawing.Point(0, 694);
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(0, 13);
             this.outputLabel.TabIndex = 0;
@@ -102,20 +105,23 @@
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnGoogle,
             this.btnGoSkype,
             this.btnFBMessager,
             this.btnGoogleTranslate,
             this.btnGoDictionary,
+            this.btnStackOverFlow,
             this.btnWriter,
             this.backButton,
             this.forwardButton,
             this.goButton,
             this.urlTextBox,
-            this.toolStripDropDownButton1});
+            this.toolStripDropDownButton1,
+            this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(803, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1086, 25);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Layout += new System.Windows.Forms.LayoutEventHandler(this.HandleToolStripLayout);
@@ -131,6 +137,15 @@
             this.btnGoSkype.Text = "Skype";
             this.btnGoSkype.Click += new System.EventHandler(this.btnGoSkype_Click);
             // 
+            // btnFBMessager
+            // 
+            this.btnFBMessager.Image = ((System.Drawing.Image)(resources.GetObject("btnFBMessager.Image")));
+            this.btnFBMessager.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFBMessager.Name = "btnFBMessager";
+            this.btnFBMessager.Size = new System.Drawing.Size(77, 22);
+            this.btnFBMessager.Text = "Messager";
+            this.btnFBMessager.Click += new System.EventHandler(this.btnFBMessager_Click);
+            // 
             // btnGoogleTranslate
             // 
             this.btnGoogleTranslate.Image = ((System.Drawing.Image)(resources.GetObject("btnGoogleTranslate.Image")));
@@ -139,6 +154,22 @@
             this.btnGoogleTranslate.Size = new System.Drawing.Size(74, 22);
             this.btnGoogleTranslate.Text = "Translate";
             this.btnGoogleTranslate.Click += new System.EventHandler(this.btnGoogleTranslate_Click);
+            // 
+            // btnGoDictionary
+            // 
+            this.btnGoDictionary.Image = ((System.Drawing.Image)(resources.GetObject("btnGoDictionary.Image")));
+            this.btnGoDictionary.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGoDictionary.Name = "btnGoDictionary";
+            this.btnGoDictionary.Size = new System.Drawing.Size(81, 22);
+            this.btnGoDictionary.Text = "Dictionary";
+            // 
+            // btnWriter
+            // 
+            this.btnWriter.Image = ((System.Drawing.Image)(resources.GetObject("btnWriter.Image")));
+            this.btnWriter.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnWriter.Name = "btnWriter";
+            this.btnWriter.Size = new System.Drawing.Size(59, 22);
+            this.btnWriter.Text = "Writer";
             // 
             // backButton
             // 
@@ -220,7 +251,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(225, 490);
+            this.panel1.Size = new System.Drawing.Size(306, 732);
             this.panel1.TabIndex = 1;
             // 
             // splitContainer1
@@ -236,40 +267,39 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1032, 490);
-            this.splitContainer1.SplitterDistance = 803;
+            this.splitContainer1.Size = new System.Drawing.Size(1396, 732);
+            this.splitContainer1.SplitterDistance = 1086;
             this.splitContainer1.TabIndex = 2;
             // 
-            // btnFBMessager
+            // btnGoogle
             // 
-            this.btnFBMessager.Image = ((System.Drawing.Image)(resources.GetObject("btnFBMessager.Image")));
-            this.btnFBMessager.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFBMessager.Name = "btnFBMessager";
-            this.btnFBMessager.Size = new System.Drawing.Size(77, 22);
-            this.btnFBMessager.Text = "Messager";
-            this.btnFBMessager.Click += new System.EventHandler(this.btnFBMessager_Click);
+            this.btnGoogle.Image = ((System.Drawing.Image)(resources.GetObject("btnGoogle.Image")));
+            this.btnGoogle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGoogle.Name = "btnGoogle";
+            this.btnGoogle.Size = new System.Drawing.Size(65, 22);
+            this.btnGoogle.Text = "Google";
             // 
-            // btnGoDictionary
+            // btnStackOverFlow
             // 
-            this.btnGoDictionary.Image = ((System.Drawing.Image)(resources.GetObject("btnGoDictionary.Image")));
-            this.btnGoDictionary.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGoDictionary.Name = "btnGoDictionary";
-            this.btnGoDictionary.Size = new System.Drawing.Size(81, 22);
-            this.btnGoDictionary.Text = "Dictionary";
+            this.btnStackOverFlow.Image = ((System.Drawing.Image)(resources.GetObject("btnStackOverFlow.Image")));
+            this.btnStackOverFlow.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnStackOverFlow.Name = "btnStackOverFlow";
+            this.btnStackOverFlow.Size = new System.Drawing.Size(105, 22);
+            this.btnStackOverFlow.Text = "StackOverFlow";
             // 
-            // btnWriter
+            // toolStripButton3
             // 
-            this.btnWriter.Image = ((System.Drawing.Image)(resources.GetObject("btnWriter.Image")));
-            this.btnWriter.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnWriter.Name = "btnWriter";
-            this.btnWriter.Size = new System.Drawing.Size(59, 22);
-            this.btnWriter.Text = "Writer";
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(114, 22);
+            this.toolStripButton3.Text = "toolStripButton3";
             // 
             // BrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 490);
+            this.ClientSize = new System.Drawing.Size(1396, 732);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BrowserForm";
@@ -311,5 +341,8 @@
         private System.Windows.Forms.ToolStripButton btnFBMessager;
         private System.Windows.Forms.ToolStripButton btnGoDictionary;
         private System.Windows.Forms.ToolStripButton btnWriter;
+        private System.Windows.Forms.ToolStripButton btnGoogle;
+        private System.Windows.Forms.ToolStripButton btnStackOverFlow;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }

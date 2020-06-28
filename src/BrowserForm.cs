@@ -10,6 +10,7 @@ namespace CefSharp.MinimalExample.WinForms
         private readonly ChromiumWebBrowser m_browserSkype;
         private readonly ChromiumWebBrowser m_browserTranslate;
         private readonly ChromiumWebBrowser m_browserFBMessager;
+        private readonly ChromiumWebBrowser m_browserWriter;
 
         public BrowserForm()
         {
@@ -17,6 +18,9 @@ namespace CefSharp.MinimalExample.WinForms
 
             Text = "CefSharp";
             WindowState = FormWindowState.Maximized;
+
+            m_browserWriter = new ChromiumWebBrowser("https://app.grammarly.com");
+            toolStripContainer.ContentPanel.Controls.Add(m_browserWriter);
 
             m_browserSkype = new ChromiumWebBrowser("https://web.skype.com/");
             toolStripContainer.ContentPanel.Controls.Add(m_browserSkype);
