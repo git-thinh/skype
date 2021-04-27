@@ -30,17 +30,17 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.containerSearchWordResult = new System.Windows.Forms.ToolStripContainer();
             this.txtEditor = new System.Windows.Forms.TextBox();
             this.panelWriter = new System.Windows.Forms.Panel();
-            this.btnCheckGrammarly = new System.Windows.Forms.Button();
             this.containerSearchContextResult = new System.Windows.Forms.ToolStripContainer();
-            this.containerSearchWordResult = new System.Windows.Forms.ToolStripContainer();
+            this.btnCheckGrammarly = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.containerSearchWordResult.SuspendLayout();
             this.panelWriter.SuspendLayout();
             this.containerSearchContextResult.SuspendLayout();
-            this.containerSearchWordResult.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -60,6 +60,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(397, 760);
             this.panel1.TabIndex = 1;
+            // 
+            // containerSearchWordResult
+            // 
+            this.containerSearchWordResult.BottomToolStripPanelVisible = false;
+            // 
+            // containerSearchWordResult.ContentPanel
+            // 
+            this.containerSearchWordResult.ContentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.containerSearchWordResult.ContentPanel.Size = new System.Drawing.Size(397, 760);
+            this.containerSearchWordResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.containerSearchWordResult.LeftToolStripPanelVisible = false;
+            this.containerSearchWordResult.Location = new System.Drawing.Point(0, 0);
+            this.containerSearchWordResult.Name = "containerSearchWordResult";
+            this.containerSearchWordResult.RightToolStripPanelVisible = false;
+            this.containerSearchWordResult.Size = new System.Drawing.Size(397, 760);
+            this.containerSearchWordResult.TabIndex = 0;
+            this.containerSearchWordResult.Text = "toolStripContainer2";
+            this.containerSearchWordResult.TopToolStripPanelVisible = false;
             // 
             // txtEditor
             // 
@@ -87,15 +105,6 @@
             this.panelWriter.Size = new System.Drawing.Size(957, 760);
             this.panelWriter.TabIndex = 2;
             // 
-            // btnCheckGrammarly
-            // 
-            this.btnCheckGrammarly.Location = new System.Drawing.Point(12, 12);
-            this.btnCheckGrammarly.Name = "btnCheckGrammarly";
-            this.btnCheckGrammarly.Size = new System.Drawing.Size(130, 23);
-            this.btnCheckGrammarly.TabIndex = 1;
-            this.btnCheckGrammarly.Text = "Check Grammarly";
-            this.btnCheckGrammarly.UseVisualStyleBackColor = true;
-            // 
             // containerSearchContextResult
             // 
             this.containerSearchContextResult.BottomToolStripPanelVisible = false;
@@ -112,23 +121,15 @@
             this.containerSearchContextResult.Text = "toolStripContainer1";
             this.containerSearchContextResult.TopToolStripPanelVisible = false;
             // 
-            // containerSearchWordResult
+            // btnCheckGrammarly
             // 
-            this.containerSearchWordResult.BottomToolStripPanelVisible = false;
-            // 
-            // containerSearchWordResult.ContentPanel
-            // 
-            this.containerSearchWordResult.ContentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.containerSearchWordResult.ContentPanel.Size = new System.Drawing.Size(397, 760);
-            this.containerSearchWordResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.containerSearchWordResult.LeftToolStripPanelVisible = false;
-            this.containerSearchWordResult.Location = new System.Drawing.Point(0, 0);
-            this.containerSearchWordResult.Name = "containerSearchWordResult";
-            this.containerSearchWordResult.RightToolStripPanelVisible = false;
-            this.containerSearchWordResult.Size = new System.Drawing.Size(397, 760);
-            this.containerSearchWordResult.TabIndex = 0;
-            this.containerSearchWordResult.Text = "toolStripContainer2";
-            this.containerSearchWordResult.TopToolStripPanelVisible = false;
+            this.btnCheckGrammarly.Location = new System.Drawing.Point(12, 12);
+            this.btnCheckGrammarly.Name = "btnCheckGrammarly";
+            this.btnCheckGrammarly.Size = new System.Drawing.Size(130, 23);
+            this.btnCheckGrammarly.TabIndex = 1;
+            this.btnCheckGrammarly.Text = "Check Grammarly";
+            this.btnCheckGrammarly.UseVisualStyleBackColor = true;
+            this.btnCheckGrammarly.Click += new System.EventHandler(this.btnCheckGrammarly_Click);
             // 
             // FormMain
             // 
@@ -145,12 +146,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.containerSearchWordResult.ResumeLayout(false);
+            this.containerSearchWordResult.PerformLayout();
             this.panelWriter.ResumeLayout(false);
             this.panelWriter.PerformLayout();
             this.containerSearchContextResult.ResumeLayout(false);
             this.containerSearchContextResult.PerformLayout();
-            this.containerSearchWordResult.ResumeLayout(false);
-            this.containerSearchWordResult.PerformLayout();
             this.ResumeLayout(false);
 
         }

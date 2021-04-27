@@ -39,5 +39,9 @@ namespace CefSharp.MinimalExample.WinForms
 
         }
 
+        private void btnCheckGrammarly_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
